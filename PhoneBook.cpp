@@ -5,27 +5,27 @@
 /* ctor, cctor, dtor, oper= */
 Contact::Contact() {
     nama = "";
-    tempat_lahir = "";
+    tempat_tinggal = "";
     alamat = "";
     kekuatan = "";
 }
 
-Contact::Contact(string temp_nama, string temp_tempat_lahir, string temp_alamat, string temp_kekuatan) {
+Contact::Contact(string temp_nama, string temp_tempat_tinggal, string temp_alamat, string temp_kekuatan) {
     nama = temp_nama;
-    tempat_lahir = temp_tempat_lahir;
+    tempat_tinggal = temp_tempat_tinggal;
     alamat = temp_alamat;
     kekuatan = temp_kekuatan;
 }
 
 Contact::Contact(const Contact& other)
-    : nama(other.nama), tempat_lahir(other.tempat_lahir), alamat(other.alamat), kekuatan(other.kekuatan) {}
+    : nama(other.nama), tempat_tinggal(other.tempat_tinggal), alamat(other.alamat), kekuatan(other.kekuatan) {}
 
 Contact::~Contact() {}
 
 Contact& Contact::operator=(const Contact& other) {
     if (this != &other) {
         nama = other.nama;
-        tempat_lahir = other.tempat_lahir;
+        tempat_tinggal = other.tempat_tinggal;
         alamat = other.alamat;
         kekuatan = other.kekuatan;
     }
@@ -34,13 +34,13 @@ Contact& Contact::operator=(const Contact& other) {
 
 /* Metode-metode getter */
 string Contact::getNama() {return nama;}
-string Contact::getTempatLahir() {return tempat_lahir;}
+string Contact::getTempatTinggal() {return tempat_tinggal;}
 string Contact::getAlamat() {return alamat;}
 string Contact::getKekuatan() {return kekuatan;}
 
 /* Metode-metode setter */
 void Contact::setNama(string nama) {this->nama = nama;}
-void Contact::setTempatLahir(string tempat_lahir) {this->tempat_lahir = tempat_lahir;}
+void Contact::setTempatTinggal(string tempat_tinggal) {this->tempat_tinggal = tempat_tinggal;}
 void Contact::setAlamat(string alamat) {this->alamat = alamat;}
 void Contact::setKekuatan(string kekuatan) {this->kekuatan = kekuatan;}
 
@@ -102,7 +102,7 @@ void PhoneBook::showSpecificContact(int index) {
     if (!contact.getNama().empty()) {
         cout << "INFORMASI KONTAK" << endl;
         cout << "Nama: " << contact.getNama() << endl;
-        cout << "Tempat Lahir: " << contact.getTempatLahir() << endl;
+        cout << "Tempat Tinggal: " << contact.getTempatTinggal() << endl;
         cout << "Alamat: " << contact.getAlamat() << endl;
         cout << "Kekuatan: " << contact.getKekuatan() << endl;
     } else {
@@ -138,7 +138,7 @@ void PhoneBook::inputNewContact() {
     cout << "Nama: "; cin.ignore(); getline(cin, input);
     new_contact.setNama(input);
     cout << "Tempat Lahir: "; getline(cin, input);
-    new_contact.setTempatLahir(input);
+    new_contact.setTempatTinggal(input);
     cout << "Alamat: "; getline(cin, input);
     new_contact.setAlamat(input);
     cout << "Kekuatan: "; getline(cin, input);

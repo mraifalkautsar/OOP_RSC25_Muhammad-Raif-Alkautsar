@@ -12,16 +12,16 @@ class Contact {
 
     /* getter & setter */
     string getNama();
-    string getTempatLahir();
+    string getTempatTinggal();
     string getAlamat();
     string getKekuatan();
     void setNama(string);
-    void setTempatLahir(string);
+    void setTempatTinggal(string);
     void setAlamat(string);
     void setKekuatan(string);
 
     private:
-    string nama, tempat_lahir, alamat, kekuatan;
+    string nama, tempat_tinggal, alamat, kekuatan;
 };
 
 class PhoneBook {
